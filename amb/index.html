@@ -1,0 +1,606 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<title>Ayala Morgan &amp; Buzzard Concept</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500&display=swap">
+<style>
+:root{
+  color-scheme: light;
+  --ink:#1C2226; --ink-2:#262E33; --paper:#FFFFFF; --stone:#F4F2EF; --line:#E3DFD9;
+  --text:#1C2226; --muted:#686F75; --gold:#9C7F4E; --gold-soft:#CBB68C; --on-ink:#F4F2EF; --on-ink-muted:#A9AFB3;
+  --serif:"Cormorant Garamond", "Iowan Old Style", Garamond, Georgia, serif;
+  --sans:"Jost", "Futura", "Avenir Next", "Helvetica Neue", Arial, sans-serif;
+  --gutter:clamp(16px, 4vw, 56px);
+  --max:1240px;
+}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}*{transition:none!important;animation:none!important}}
+body{background:var(--paper);color:var(--text);font-family:var(--sans);font-weight:300;font-size:16px;line-height:1.65;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+button,input,select{font:inherit;color:inherit}
+:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+.wrap{max-width:var(--max);margin-inline:auto;padding-inline:var(--gutter)}
+.eyebrow{font-family:var(--sans);font-weight:400;font-size:12px;letter-spacing:.24em;text-transform:uppercase;color:var(--gold)}
+.display{font-family:var(--serif);font-weight:400;text-transform:uppercase;letter-spacing:.04em;line-height:1.08;text-wrap:balance;margin:0}
+.display em{font-style:italic;text-transform:none;letter-spacing:0;font-weight:400}
+.h2{font-size:clamp(30px,3.6vw,46px)}
+.lede{font-size:17px;color:var(--muted);max-width:60ch;margin:0}
+.btn{white-space:nowrap;display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:15px 28px;border:1px solid var(--ink);background:var(--ink);color:var(--on-ink);font-size:12px;font-weight:400;letter-spacing:.2em;text-transform:uppercase;cursor:pointer;transition:background .25s,color .25s}
+.btn:hover{background:transparent;color:var(--ink)}
+.btn.ghost{background:transparent;color:var(--ink)}
+.btn.ghost:hover{background:var(--ink);color:var(--on-ink)}
+.btn.light{background:var(--on-ink);color:var(--ink);border-color:var(--on-ink)}
+.btn.light:hover{background:transparent;color:var(--on-ink)}
+.link{font-size:12px;letter-spacing:.2em;text-transform:uppercase;font-weight:400;border-bottom:1px solid currentColor;padding-bottom:4px;display:inline-block}
+.link:hover{color:var(--gold)}
+section{padding-block:clamp(64px,9vw,120px)}
+
+/* Utility bar */
+.utility{background:var(--ink);color:var(--on-ink-muted);font-size:12px;letter-spacing:.12em;text-transform:uppercase}
+.utility .wrap{display:flex;justify-content:space-between;align-items:center;gap:16px;min-height:38px;flex-wrap:wrap;padding-block:6px}
+.utility strong{color:var(--on-ink);font-weight:400;letter-spacing:.14em}
+
+/* Header */
+header.site{position:sticky;top:env(safe-area-inset-top,0px);z-index:40;background:var(--paper);border-bottom:1px solid var(--line)}
+header.site > .wrap{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;min-height:84px;gap:16px}
+.nav{display:flex;gap:clamp(16px,2vw,30px);font-size:12px;letter-spacing:.18em;text-transform:uppercase;font-weight:400}
+.nav a{white-space:nowrap;padding-block:6px;border-bottom:1px solid transparent}
+.nav a:hover{border-color:var(--gold)}
+.brand{text-align:center;line-height:1}
+.brand .name{font-family:var(--serif);font-size:24px;letter-spacing:.2em;text-transform:uppercase;font-weight:500;white-space:nowrap}
+.brand .name i{font-style:italic;text-transform:none;letter-spacing:0;color:var(--gold);padding-inline:.15em}
+.brand .sub{display:block;font-size:9.5px;letter-spacing:.42em;text-transform:uppercase;color:var(--muted);margin-top:8px}
+.head-cta{display:flex;justify-content:flex-end;align-items:center;gap:20px}
+.head-cta .phone{white-space:nowrap;font-size:13px;letter-spacing:.08em;font-variant-numeric:tabular-nums}
+.menu-btn{display:none;background:none;border:0;padding:8px;cursor:pointer}
+.menu-btn span{display:block;width:22px;height:1px;background:var(--ink);margin:6px 0}
+.mobile-nav{border-top:1px solid var(--line);padding-block:12px 20px}
+.mobile-nav a{display:block;padding-block:12px;font-size:13px;letter-spacing:.18em;text-transform:uppercase;border-bottom:1px solid var(--line)}
+@media (max-width:1240px){.head-cta .phone{display:none}}
+@media (max-width:980px){
+  header.site > .wrap{grid-template-columns:auto 1fr auto;min-height:68px}
+  .nav,.head-cta .phone{display:none}
+  .menu-btn{display:block}
+  .brand .name{font-size:18px;letter-spacing:.14em}
+  .brand .sub{font-size:8.5px;letter-spacing:.34em}
+  .head-cta .btn{padding:11px 14px;font-size:10.5px;letter-spacing:.14em}
+}
+@media (max-width:520px){ .head-cta .btn{display:none} header.site > .wrap{grid-template-columns:auto 1fr auto} .utility .wrap > span:first-child{display:none} .utility .wrap{justify-content:center} }
+
+/* Hero */
+.hero{position:relative;padding:0;min-height:clamp(520px,74vh,760px);display:grid;place-items:center;color:#fff;overflow:hidden;background:#1a2430}
+.hero canvas{position:absolute;inset:0;width:100%;height:100%}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(16,20,24,.25) 0%,rgba(16,20,24,.05) 40%,rgba(16,20,24,.55) 100%)}
+.hero-inner{position:relative;z-index:2;text-align:center;padding:96px var(--gutter) 150px;max-width:1000px}
+.hero .eyebrow{color:#E7D9BC}
+.hero h1{font-size:clamp(38px,6.2vw,82px);margin-top:22px;text-shadow:0 2px 30px rgba(0,0,0,.25)}
+.hero p{font-size:17px;max-width:52ch;margin:24px auto 0;color:rgba(255,255,255,.88)}
+.hero .scroll{display:inline-block;margin-top:34px;font-size:11px;letter-spacing:.28em;text-transform:uppercase;color:rgba(255,255,255,.8)}
+
+/* Booking-style intake bar */
+.intake{position:relative;z-index:5;margin-top:-72px;padding:0}
+.intake form{background:var(--paper);box-shadow:0 24px 60px -24px rgba(20,26,30,.35);display:grid;grid-template-columns:repeat(3,1fr) auto;border:1px solid var(--line)}
+.field{padding:18px 24px;border-right:1px solid var(--line);display:flex;flex-direction:column;gap:4px;min-width:0}
+.field label{font-size:10.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);font-weight:400}
+.field select,.field input{border:0;background:transparent;padding:4px 0;font-family:var(--serif);font-size:21px;font-weight:500;outline:none;width:100%;min-width:0;appearance:none;-webkit-appearance:none;cursor:pointer}
+.field:focus-within{background:var(--stone)}
+.intake .btn{height:100%;padding-inline:36px;min-height:84px}
+.intake-note{font-size:12.5px;color:var(--muted);margin:14px 2px 0;letter-spacing:.02em}
+.intake-done{background:var(--paper);border:1px solid var(--line);padding:26px 28px;display:flex;gap:18px;align-items:center;flex-wrap:wrap;box-shadow:0 24px 60px -24px rgba(20,26,30,.35)}
+.intake-done .display{font-size:26px}
+@media (max-width:900px){
+  .intake form{grid-template-columns:1fr 1fr}
+  .field:nth-child(2){border-right:0}
+  .field{border-bottom:1px solid var(--line)}
+  .field:nth-child(3){grid-column:1/-1;border-right:0}
+  .intake .btn{grid-column:1/-1;min-height:60px}
+}
+@media (max-width:520px){ .intake form{grid-template-columns:1fr} .field{border-right:0} }
+
+/* Intro */
+.intro .wrap{display:grid;grid-template-columns:1.05fr 1fr;gap:clamp(32px,6vw,96px);align-items:start}
+.intro .display{font-size:clamp(34px,4.4vw,58px);margin-top:18px}
+.intro .copy{display:grid;gap:22px;padding-top:44px}
+.intro .copy p{margin:0;font-size:17px;color:var(--muted)}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:1px solid var(--line);margin-top:12px}
+.stat{padding:22px 16px 0 0}
+.stat + .stat{padding-left:18px;border-left:1px solid var(--line)}
+.stat b{display:block;font-family:var(--serif);font-weight:400;font-size:40px;line-height:1;font-variant-numeric:lining-nums}
+.stat span{display:block;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin-top:10px;line-height:1.5}
+@media (max-width:860px){.intro .wrap{grid-template-columns:1fr}.intro .copy{padding-top:0}}
+
+/* Features */
+.features{background:var(--stone)}
+.features .head{text-align:center;display:grid;gap:14px;justify-items:center;margin-bottom:56px}
+.feat-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:0}
+.feat{padding:8px 22px;text-align:center;display:grid;gap:14px;justify-items:center;align-content:start}
+.feat + .feat{border-left:1px solid var(--line)}
+.feat svg{width:44px;height:44px;stroke:var(--gold);fill:none;stroke-width:1.1}
+.feat h3{font-family:var(--serif);font-weight:500;font-size:22px;line-height:1.2;margin:0;text-wrap:balance}
+.feat p{margin:0;font-size:14.5px;color:var(--muted)}
+@media (max-width:980px){.feat-grid{grid-template-columns:repeat(2,1fr);row-gap:40px}.feat + .feat{border-left:0}.feat:last-child{grid-column:1/-1}}
+@media (max-width:520px){.feat-grid{grid-template-columns:1fr}}
+
+/* Practice carousel */
+.practice .top{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap;margin-bottom:44px}
+.practice .top .display{margin-top:14px}
+.arrows{display:flex;gap:10px}
+.arrow{width:52px;height:52px;border:1px solid var(--ink);background:transparent;cursor:pointer;display:grid;place-items:center;transition:background .2s,color .2s}
+.arrow:hover{background:var(--ink);color:var(--on-ink)}
+.arrow svg{width:18px;height:18px;stroke:currentColor;fill:none;stroke-width:1.3}
+.rail{display:grid;grid-auto-flow:column;grid-auto-columns:calc((100% - 56px)/3);gap:28px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;padding-bottom:4px}
+.rail::-webkit-scrollbar{display:none}
+.card{scroll-snap-align:start;display:grid;gap:18px;align-content:start}
+.card .img{aspect-ratio:4/5;max-width:100%;position:relative;overflow:hidden;display:grid;place-items:center}
+.card .img svg{width:34%;stroke:rgba(255,255,255,.55);fill:none;stroke-width:.6;transition:transform .6s ease}
+.card:hover .img svg{transform:scale(1.06)}
+.card .img::after{content:"";position:absolute;inset:0;background:radial-gradient(120% 80% at 50% 110%,rgba(0,0,0,.28),transparent 60%)}
+.card .kicker{font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--gold)}
+.card h3{font-family:var(--serif);font-weight:500;font-size:28px;line-height:1.1;margin:0}
+.card p{margin:0;color:var(--muted);font-size:15px}
+.card .link{justify-self:start;margin-top:4px}
+@media (max-width:900px){.rail{grid-auto-columns:calc((100% - 28px)/2)}}
+@media (max-width:560px){.rail{grid-auto-columns:82%}}
+
+/* Results */
+.results{background:var(--ink);color:var(--on-ink)}
+.results .wrap{display:grid;grid-template-columns:1fr 1.5fr;gap:clamp(32px,6vw,90px);align-items:start}
+.results .eyebrow{color:var(--gold-soft)}
+.results .display{margin-top:16px}
+.results .lede{color:var(--on-ink-muted);margin-top:22px}
+.results .btn{margin-top:34px}
+.res-grid{display:grid;grid-template-columns:1fr 1fr;border-top:1px solid rgba(255,255,255,.14)}
+.res{padding:30px 0 30px;border-bottom:1px solid rgba(255,255,255,.14)}
+.res:nth-child(odd){padding-right:24px;border-right:1px solid rgba(255,255,255,.14)}
+.res:nth-child(even){padding-left:28px}
+.res b{display:block;font-family:var(--serif);font-weight:400;font-size:clamp(36px,4.2vw,56px);line-height:1;font-variant-numeric:lining-nums;letter-spacing:.01em}
+.res span{display:block;margin-top:12px;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--on-ink-muted)}
+.disclaimer{grid-column:1/-1;font-size:12px;color:var(--on-ink-muted);margin-top:18px}
+@media (max-width:860px){.results .wrap{grid-template-columns:1fr}}
+@media (max-width:480px){.res-grid{grid-template-columns:1fr}.res:nth-child(odd){border-right:0;padding-right:0}.res:nth-child(even){padding-left:0}}
+
+/* Attorneys */
+.team .head{display:grid;gap:14px;margin-bottom:52px;max-width:720px}
+.team-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+.person{display:grid;gap:16px;align-content:start}
+.portrait{aspect-ratio:3/4;max-width:100%;background:linear-gradient(160deg,#E9E5DF,#D7D1C8);display:grid;place-items:center;position:relative}
+.portrait span{font-family:var(--serif);font-style:italic;font-size:88px;color:rgba(28,34,38,.22);line-height:1}
+.portrait .badge{position:absolute;left:14px;bottom:14px;background:var(--paper);font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;padding:7px 10px;color:var(--gold)}
+.person .role{font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--gold)}
+.person h3{font-family:var(--serif);font-weight:500;font-size:30px;margin:0;line-height:1.1}
+.person p{margin:0;color:var(--muted);font-size:15px}
+@media (max-width:860px){.team-grid{grid-template-columns:1fr 1fr}}
+@media (max-width:560px){.team-grid{grid-template-columns:1fr}}
+
+/* Recognition */
+.recog{padding-block:44px;border-block:1px solid var(--line)}
+.recog .wrap{display:flex;justify-content:center;align-items:center;gap:clamp(24px,6vw,80px);flex-wrap:wrap;text-align:center}
+.recog .item{display:grid;gap:4px}
+.recog .item b{font-family:var(--serif);font-weight:500;font-size:22px;letter-spacing:.04em}
+.recog .item span{font-size:10.5px;letter-spacing:.24em;text-transform:uppercase;color:var(--muted)}
+.recog .sep{width:1px;height:40px;background:var(--line)}
+@media (max-width:700px){.recog .sep{display:none}}
+
+/* Testimonials */
+.quotes{text-align:center}
+.quotes .wrap{max-width:900px}
+.quote-stage{display:grid;margin-top:34px}
+.quote{grid-area:1/1;opacity:0;visibility:hidden;transition:opacity .6s ease}
+.quote.on{opacity:1;visibility:visible}
+.quote blockquote{margin:0;font-family:var(--serif);font-style:italic;font-size:clamp(26px,3.4vw,42px);line-height:1.3;text-wrap:balance}
+.quote cite{display:block;margin-top:26px;font-style:normal;font-size:12px;letter-spacing:.24em;text-transform:uppercase;color:var(--muted)}
+.dots{display:flex;justify-content:center;gap:12px;margin-top:34px}
+.dot{width:36px;height:12px;background:none;border:0;cursor:pointer;position:relative}
+.dot::after{content:"";position:absolute;left:0;right:0;top:50%;height:1px;background:var(--line)}
+.dot.on::after{background:var(--ink);height:2px}
+
+/* Offices + FAQ */
+.visit{background:var(--stone)}
+.visit .wrap{display:grid;grid-template-columns:1.2fr 1fr;gap:clamp(32px,6vw,90px)}
+.visit .display{margin-top:14px;margin-bottom:36px}
+.offices{display:grid;grid-template-columns:1fr 1fr;gap:0;border-top:1px solid var(--line)}
+.office{padding:24px 20px 24px 0;border-bottom:1px solid var(--line)}
+.office:nth-child(even){padding-left:22px;border-left:1px solid var(--line)}
+.office h3{font-family:var(--serif);font-weight:500;font-size:24px;margin:0 0 8px}
+.office address{font-style:normal;font-size:14.5px;color:var(--muted);line-height:1.6}
+.office .tel{display:block;margin-top:10px;font-size:13px;letter-spacing:.08em;font-variant-numeric:tabular-nums}
+.faq details{border-bottom:1px solid var(--line)}
+.faq details:first-of-type{border-top:1px solid var(--line)}
+.faq summary{list-style:none;cursor:pointer;padding:22px 36px 22px 0;position:relative;font-family:var(--serif);font-size:21px;font-weight:500;line-height:1.3}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";position:absolute;right:4px;top:18px;font-family:var(--sans);font-weight:300;font-size:24px;color:var(--gold);transition:transform .25s}
+.faq details[open] summary::after{transform:rotate(45deg)}
+.faq details p{margin:0 0 22px;color:var(--muted);font-size:15px;max-width:60ch}
+@media (max-width:900px){.visit .wrap{grid-template-columns:1fr}}
+@media (max-width:520px){.offices{grid-template-columns:1fr}.office:nth-child(even){padding-left:0;border-left:0}}
+
+/* CTA band */
+.band{position:relative;overflow:hidden;background:#243039;color:#fff;text-align:center}
+.band canvas{position:absolute;inset:0;width:100%;height:100%;opacity:.55}
+.band .wrap{position:relative;display:grid;gap:22px;justify-items:center}
+.band .eyebrow{color:#E7D9BC}
+.band .display{font-size:clamp(34px,5vw,64px)}
+.band .phone-big{font-family:var(--serif);font-size:clamp(28px,3.6vw,40px);letter-spacing:.06em;font-variant-numeric:lining-nums;user-select:all}
+.band .row{display:flex;gap:14px;flex-wrap:wrap;justify-content:center}
+
+/* Footer */
+footer{background:var(--ink);color:var(--on-ink-muted);font-size:14px;padding-block:72px 32px}
+.foot{display:grid;grid-template-columns:1.4fr repeat(3,1fr);gap:40px}
+.foot .brand{text-align:left;color:var(--on-ink)}
+.foot .brand .sub{color:var(--on-ink-muted)}
+.foot h4{font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:var(--on-ink);font-weight:400;margin:0 0 16px}
+.foot ul{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+.foot a:hover{color:var(--on-ink)}
+.foot p{margin:20px 0 0;max-width:34ch}
+.legal{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;border-top:1px solid rgba(255,255,255,.12);margin-top:56px;padding-top:24px;font-size:12px;letter-spacing:.06em}
+@media (max-width:860px){.foot{grid-template-columns:1fr 1fr}.foot > div:first-child{grid-column:1/-1}}
+</style>
+</head>
+<body>
+
+
+<div class="utility">
+  <div class="wrap">
+    <span>Free, confidential consultation &nbsp;·&nbsp; No fee unless we win</span>
+    <span>Call <strong>(925) 414-0084</strong></span>
+  </div>
+</div>
+
+<header class="site">
+  <div class="wrap">
+    <button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false"><span></span><span></span></button>
+    <nav class="nav" aria-label="Primary">
+      <a href="#practice">Practice Areas</a>
+      <a href="#results">Results</a>
+      <a href="#team">Attorneys</a>
+      <a href="#visit">Offices</a>
+    </nav>
+    <a class="brand" href="#top" aria-label="Ayala, Morgan and Buzzard home">
+      <span class="name">Ayala<i>·</i>Morgan<i>&amp;</i>Buzzard</span>
+      <span class="sub">Attorneys at Law</span>
+    </a>
+    <div class="head-cta">
+      <span class="phone">(925) 414-0084</span>
+      <a class="btn" href="#intake">Free Consultation</a>
+    </div>
+  </div>
+  <nav class="mobile-nav wrap" id="mobileNav" hidden aria-label="Mobile">
+    <a href="#practice">Practice Areas</a>
+    <a href="#results">Results</a>
+    <a href="#team">Attorneys</a>
+    <a href="#visit">Offices</a>
+    <a href="#intake">Free Consultation</a>
+  </nav>
+</header>
+
+<main id="top">
+  <section class="hero" aria-label="Introduction">
+    <canvas id="sky" aria-hidden="true"></canvas>
+    <div class="hero-inner">
+      <div class="eyebrow">Personal Injury Attorneys &nbsp;·&nbsp; San Francisco</div>
+      <h1 class="display">When you've been injured, you need an <em>advocate</em></h1>
+      <p>From our offices on Montgomery Street, we represent injured Californians against the insurance companies we once knew from the inside.</p>
+      <a class="scroll" href="#intro">Discover the firm</a>
+    </div>
+  </section>
+
+  <div class="intake wrap" id="intake">
+    <form id="intakeForm" aria-label="Start a free case review">
+      <div class="field">
+        <label for="f-type">Type of injury</label>
+        <select id="f-type">
+          <option>Car accident</option><option>Truck accident</option><option>Motorcycle accident</option>
+          <option>Bus accident</option><option>Pedestrian accident</option><option>Slip &amp; fall</option>
+          <option>Brain injury</option><option>Spine injury</option><option>Wrongful death</option>
+        </select>
+      </div>
+      <div class="field">
+        <label for="f-date">Date of incident</label>
+        <input id="f-date" type="date" value="2026-08-14">
+      </div>
+      <div class="field">
+        <label for="f-office">Nearest office</label>
+        <select id="f-office">
+          <option>San Francisco</option><option>Los Angeles</option><option>Redwood City</option><option>Brentwood</option>
+        </select>
+      </div>
+      <button class="btn" type="submit">Start free review</button>
+    </form>
+    <div class="intake-done" id="intakeDone" hidden>
+      <div class="display">Thank you. <em>We'll be in touch.</em></div>
+      <span class="lede" style="font-size:15px">Concept preview: on the live site this sends your details to the intake team.</span>
+    </div>
+    <p class="intake-note" id="intakeNote">Most California injury claims must be filed within two years. A review costs nothing.</p>
+  </div>
+
+  <section class="intro" id="intro">
+    <div class="wrap">
+      <div>
+        <div class="eyebrow">A San Francisco firm since the partners reunited</div>
+        <h2 class="display">Large-firm results. <em>Small-firm</em> attention.</h2>
+      </div>
+      <div class="copy">
+        <p>Our founding partners went to law school together, studied for the bar together, then practiced on their own before coming back together to build a firm around one idea: we care. Every case gets a strategy built for that client and backed by evidence.</p>
+        <p>We serve the Bay Area, Los Angeles County and clients across California, and we work on contingency, so you pay nothing unless we recover for you.</p>
+        <div class="stats">
+          <div class="stat"><b>4</b><span>California offices</span></div>
+          <div class="stat"><b>$0</b><span>Upfront cost</span></div>
+          <div class="stat"><b>2 yrs</b><span>To file most CA claims</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="features" aria-label="Why clients choose us">
+    <div class="wrap">
+      <div class="head">
+        <div class="eyebrow">Why Ayala, Morgan &amp; Buzzard</div>
+        <h2 class="display h2">Counsel built <em>around you</em></h2>
+      </div>
+      <div class="feat-grid">
+        <div class="feat">
+          <svg viewBox="0 0 48 48"><path d="M24 5 8 11v12c0 10 7 17 16 20 9-3 16-10 16-20V11z"/><path d="m17 24 5 5 9-10"/></svg>
+          <h3>Insight from the other side</h3>
+          <p>Our attorneys have defended insurers. We know how they value, and undervalue, a claim.</p>
+        </div>
+        <div class="feat">
+          <svg viewBox="0 0 48 48"><circle cx="21" cy="21" r="12"/><path d="m30 30 11 11M15 21h12M21 15v12"/></svg>
+          <h3>Evidence-based cases</h3>
+          <p>Records, experts and reconstruction, assembled early so your case is ready for trial.</p>
+        </div>
+        <div class="feat">
+          <svg viewBox="0 0 48 48"><circle cx="24" cy="24" r="17"/><path d="M29 17.5c-1.2-1.6-3-2.5-5-2.5-3 0-5 1.7-5 4s2 3.3 5 4 5 1.8 5 4.3-2.2 4.2-5 4.2c-2.3 0-4.3-1-5.4-2.8M24 12v3M24 31.5V35"/></svg>
+          <h3>No fee unless we win</h3>
+          <p>Contingency representation. Your consultation is free and confidential.</p>
+        </div>
+        <div class="feat">
+          <svg viewBox="0 0 48 48"><path d="M24 43s13-12.5 13-23a13 13 0 0 0-26 0c0 10.5 13 23 13 23z"/><circle cx="24" cy="20" r="4.5"/></svg>
+          <h3>Four California offices</h3>
+          <p>San Francisco, Los Angeles, Redwood City and Brentwood.</p>
+        </div>
+        <div class="feat">
+          <svg viewBox="0 0 48 48"><circle cx="24" cy="18" r="11"/><path d="m18 27-4 15 10-5 10 5-4-15"/><path d="m24 12 1.8 3.8 4.2.5-3.1 2.8.8 4.1-3.7-2-3.7 2 .8-4.1-3.1-2.8 4.2-.5z"/></svg>
+          <h3>Recognized counsel</h3>
+          <p>Super Lawyers 2025 and The National Trial Lawyers Top 40.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="practice" id="practice">
+    <div class="wrap">
+      <div class="top">
+        <div>
+          <div class="eyebrow">Practice areas</div>
+          <h2 class="display h2">How we <em>can help</em></h2>
+        </div>
+        <div class="arrows">
+          <button class="arrow" id="prev" aria-label="Previous practice areas"><svg viewBox="0 0 24 24"><path d="M15 5 8 12l7 7"/></svg></button>
+          <button class="arrow" id="next" aria-label="Next practice areas"><svg viewBox="0 0 24 24"><path d="m9 5 7 7-7 7"/></svg></button>
+        </div>
+      </div>
+      <div class="rail" id="rail"></div>
+    </div>
+  </section>
+
+  <section class="results" id="results">
+    <div class="wrap">
+      <div>
+        <div class="eyebrow">Case results</div>
+        <h2 class="display h2">Recoveries that <em>restore</em> lives</h2>
+        <p class="lede">A selection of settlements and verdicts our attorneys have won for clients hurt on California roads, sidewalks and properties.</p>
+        <a class="btn light" href="#results">View all results</a>
+      </div>
+      <div class="res-grid">
+        <div class="res"><b>$3,500,000</b><span>Auto accident</span></div>
+        <div class="res"><b>$2,000,000</b><span>Slip &amp; fall</span></div>
+        <div class="res"><b>$1,250,000</b><span>Car accident · Policy limit</span></div>
+        <div class="res"><b>$950,000</b><span>Auto accident</span></div>
+        <div class="res"><b>$625,000</b><span>Auto accident</span></div>
+        <div class="res"><b>$500,000</b><span>Assault &amp; battery · Policy limit</span></div>
+        <p class="disclaimer">Prior results do not guarantee a similar outcome.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="team" id="team">
+    <div class="wrap">
+      <div class="head">
+        <div class="eyebrow">The attorneys</div>
+        <h2 class="display h2">Three partners, <em>one standard</em></h2>
+        <p class="lede">They studied for the bar side by side. Today they share every case strategy the same way.</p>
+      </div>
+      <div class="team-grid">
+        <article class="person">
+          <div class="portrait"><span>NA</span><div class="badge">Super Lawyers Rising Star</div></div>
+          <div class="role">Partner</div>
+          <h3>Nicole Ayala</h3>
+          <p>Nearly ten years in personal injury, including time at a defense firm representing insurance companies. She brings that insight to every negotiation.</p>
+        </article>
+        <article class="person">
+          <div class="portrait"><span>TM</span></div>
+          <div class="role">Partner</div>
+          <h3>Tom Morgan</h3>
+          <p>More than a decade representing plaintiffs in wrongful death, traumatic brain injury, insurance bad faith and disputed liability cases.</p>
+        </article>
+        <article class="person">
+          <div class="portrait"><span>RB</span></div>
+          <div class="role">Managing Partner</div>
+          <h3>Robert Buzzard</h3>
+          <p>Has tried more than 30 bench trials, from disputed liability and slip-and-fall to police negligence and multi-party cases.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <div class="recog" aria-label="Recognition">
+    <div class="wrap">
+      <div class="item"><b>Super Lawyers</b><span>Selected 2025</span></div>
+      <div class="sep"></div>
+      <div class="item"><b>The National Trial Lawyers</b><span>Top 40</span></div>
+      <div class="sep"></div>
+      <div class="item"><b>Rising Stars</b><span>Super Lawyers</span></div>
+    </div>
+  </div>
+
+  <section class="quotes" aria-label="Client testimonials">
+    <div class="wrap">
+      <div class="eyebrow">In our clients' words</div>
+      <div class="quote-stage" id="quotes">
+        <figure class="quote on"><blockquote>“This firm was the light at the end of the tunnel and led me out of a huge mess with ease.”</blockquote><cite>Maria P.</cite></figure>
+        <figure class="quote"><blockquote>“I felt that they genuinely cared about me and my case.”</blockquote><cite>Chuy M.</cite></figure>
+        <figure class="quote"><blockquote>“They handled everything giving me the representation I deserved quickly and effectively!”</blockquote><cite>Brandy E.</cite></figure>
+      </div>
+      <div class="dots" id="dots" role="tablist" aria-label="Choose testimonial">
+        <button class="dot on" aria-label="Testimonial 1"></button><button class="dot" aria-label="Testimonial 2"></button><button class="dot" aria-label="Testimonial 3"></button>
+      </div>
+    </div>
+  </section>
+
+  <section class="visit" id="visit">
+    <div class="wrap">
+      <div>
+        <div class="eyebrow">Offices</div>
+        <h2 class="display h2">Visit us across <em>California</em></h2>
+        <div class="offices">
+          <div class="office"><h3>San Francisco</h3><address>315 Montgomery St., 8th &amp; 9th Floor<br>San Francisco, CA 94104</address><span class="tel">(925) 414-0084</span></div>
+          <div class="office"><h3>Los Angeles</h3><address>3415 South Sepulveda Blvd., Suite 1100<br>Los Angeles, CA 90034</address><span class="tel">(925) 414-0084</span></div>
+          <div class="office"><h3>Redwood City</h3><address>303 Twin Dolphin Dr., 6th Floor<br>Redwood City, CA 94065</address><span class="tel">(925) 744-8869</span></div>
+          <div class="office"><h3>Brentwood</h3><address>729 1st Street, Ste D<br>Brentwood, CA 94513</address><span class="tel">(925) 414-0084</span></div>
+        </div>
+      </div>
+      <div class="faq">
+        <div class="eyebrow">Frequently asked</div>
+        <h2 class="display h2" style="margin-bottom:36px">Before you <em>call</em></h2>
+        <details open><summary>What does it cost to hire you?</summary><p>Nothing upfront. We work on a contingency fee, which means we're paid only if we recover compensation for you.</p></details>
+        <details><summary>How long do I have to file a claim?</summary><p>For most personal injury cases in California, the statute of limitations is two years from the date of the injury. Some claims, such as those against government agencies, have much shorter deadlines.</p></details>
+        <details><summary>Is the consultation confidential?</summary><p>Yes. Your free consultation is private, and there is no obligation to hire us afterward.</p></details>
+        <details><summary>Do you handle cases outside the Bay Area?</summary><p>We represent clients throughout California from our San Francisco, Los Angeles, Redwood City and Brentwood offices.</p></details>
+      </div>
+    </div>
+  </section>
+
+  <section class="band" aria-label="Contact">
+    <canvas id="band" aria-hidden="true"></canvas>
+    <div class="wrap">
+      <div class="eyebrow">Free consultation</div>
+      <h2 class="display">Talk to an attorney <em>today</em></h2>
+      <div class="phone-big">(925) 414-0084</div>
+      <div class="row"><a class="btn light" href="#intake">Start free review</a></div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot">
+      <div>
+        <div class="brand"><span class="name">Ayala<i>·</i>Morgan<i>&amp;</i>Buzzard</span><span class="sub">Attorneys at Law</span></div>
+        <p>Personal injury representation for the Bay Area, Los Angeles County and all of California.</p>
+      </div>
+      <div><h4>Practice</h4><ul><li><a href="#practice">Car Accidents</a></li><li><a href="#practice">Truck Accidents</a></li><li><a href="#practice">Brain Injuries</a></li><li><a href="#practice">Wrongful Death</a></li></ul></div>
+      <div><h4>Firm</h4><ul><li><a href="#intro">About Us</a></li><li><a href="#results">Case Results</a></li><li><a href="#team">Attorneys</a></li><li><a href="#top">Blog</a></li></ul></div>
+      <div><h4>Contact</h4><ul><li>(925) 414-0084</li><li>Fax (925) 289-8846</li><li><a href="#visit">Office Locations</a></li></ul></div>
+    </div>
+    <div class="legal"><span>© 2026 Ayala, Morgan &amp; Buzzard. Attorney advertising.</span><span>Privacy · Disclaimer · Accessibility</span></div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  // Practice area cards
+  var areas=[
+    ["Car Accidents","Collisions on freeways and city streets, from rear-end crashes to multi-car pileups.",["#3B4A56","#6E7F8A"],'<path d="M10 62h80M18 62l6-18c1.5-4 4-6 8-6h36c4 0 6.5 2 8 6l6 18"/><circle cx="30" cy="66" r="7"/><circle cx="70" cy="66" r="7"/><path d="M28 48h44"/>'],
+    ["Truck Accidents","Commercial carriers, fatigued drivers and the corporate insurers behind them.",["#4A4A42","#8A8470"],'<path d="M8 66h84M12 64V36h48v28M60 44h16l12 12v8"/><circle cx="26" cy="68" r="6"/><circle cx="76" cy="68" r="6"/>'],
+    ["Motorcycle Accidents","Riders face bias from insurers. We push back with evidence.",["#2E3A40","#5C6E73"],'<circle cx="24" cy="62" r="12"/><circle cx="76" cy="62" r="12"/><path d="M24 62l18-20h16l18 20M52 42l-6-10h-8M58 42l8-8h8"/>'],
+    ["Pedestrian Accidents","Crosswalks, parking lots and sidewalks, where the injuries are often severe.",["#56504A","#9A8E80"],'<circle cx="50" cy="22" r="6"/><path d="M50 30v24l-10 22M50 54l10 22M38 44l12-10 12 10"/><path d="M14 82h72" stroke-dasharray="6 6"/>'],
+    ["Bus Accidents","Claims against transit agencies and private operators, with strict deadlines.",["#39464F","#77889A"],'<rect x="18" y="20" width="64" height="48" rx="6"/><path d="M18 46h64M34 20v26M66 20v26"/><circle cx="32" cy="72" r="5"/><circle cx="68" cy="72" r="5"/>'],
+    ["Slip & Fall","Unsafe property conditions, from wet floors to broken sidewalk grates.",["#4E4C47","#8E897D"],'<path d="M16 76h68"/><path d="M30 76c10-6 22-6 32 0" /><circle cx="46" cy="24" r="6"/><path d="M46 32l6 20 14 6M52 52l-14 14M44 38l-16 4"/>'],
+    ["Brain Injuries","Traumatic brain injuries that change work, memory and family life.",["#34403F","#6B7D78"],'<path d="M50 20c-12 0-22 8-22 20 0 6 2 10 5 13-1 8 5 14 13 14h8c8 0 14-6 13-14 3-3 5-7 5-13 0-12-10-20-22-20z"/><path d="M50 20v47M40 32c4 2 6 6 6 10M60 32c-4 2-6 6-6 10"/>'],
+    ["Spine Injury","Herniated discs to spinal cord damage, with care that can last a lifetime.",["#4A4640","#8C8374"],'<path d="M50 14v72"/><rect x="40" y="18" width="20" height="9" rx="3"/><rect x="40" y="32" width="20" height="9" rx="3"/><rect x="40" y="46" width="20" height="9" rx="3"/><rect x="40" y="60" width="20" height="9" rx="3"/><rect x="40" y="74" width="20" height="9" rx="3"/>'],
+    ["Wrongful Death","Compassionate, determined advocacy for families after a preventable loss.",["#2F3538","#626B6F"],'<path d="M50 80V36M50 36c-8-10-20-10-24-2s4 16 24 30c20-14 28-22 24-30s-16-8-24 2z"/>']
+  ];
+  var rail=document.getElementById('rail');
+  rail.innerHTML=areas.map(function(a,i){
+    return '<article class="card"><div class="img" style="background:linear-gradient(155deg,'+a[2][1]+' 0%,'+a[2][0]+' 70%)"><svg viewBox="0 0 100 100" aria-hidden="true">'+a[3]+'</svg></div>'+
+      '<div class="kicker">'+String(i+1).padStart(2,"0")+' / '+areas.length+'</div><h3>'+a[0]+'</h3><p>'+a[1]+'</p><a class="link" href="#intake">Learn more</a></article>';
+  }).join('');
+  function step(){var c=rail.querySelector('.card');return c?c.getBoundingClientRect().width+28:300}
+  document.getElementById('next').onclick=function(){rail.scrollBy({left:step(),behavior:'smooth'})};
+  document.getElementById('prev').onclick=function(){rail.scrollBy({left:-step(),behavior:'smooth'})};
+
+  // Mobile menu
+  var mb=document.getElementById('menuBtn'),mn=document.getElementById('mobileNav');
+  mb.onclick=function(){mn.hidden=!mn.hidden;mb.setAttribute('aria-expanded',String(!mn.hidden))};
+  mn.addEventListener('click',function(e){if(e.target.tagName==='A'){mn.hidden=true;mb.setAttribute('aria-expanded','false')}});
+
+  // Intake
+  document.getElementById('intakeForm').addEventListener('submit',function(e){
+    e.preventDefault();this.hidden=true;document.getElementById('intakeNote').hidden=true;document.getElementById('intakeDone').hidden=false;
+  });
+
+  // Testimonials
+  var qs=[].slice.call(document.querySelectorAll('.quote')),ds=[].slice.call(document.querySelectorAll('.dot')),qi=0,timer;
+  function show(n){qi=n;qs.forEach(function(q,i){q.classList.toggle('on',i===n)});ds.forEach(function(d,i){d.classList.toggle('on',i===n)})}
+  ds.forEach(function(d,i){d.onclick=function(){show(i);clearInterval(timer)}});
+  if(!matchMedia('(prefers-reduced-motion: reduce)').matches){timer=setInterval(function(){show((qi+1)%qs.length)},6500)}
+
+  // Painted skyline: dusk over the Financial District
+  function rng(seed){return function(){seed=(seed*16807)%2147483647;return (seed-1)/2147483646}}
+  function paint(cv,opts){
+    var dpr=Math.min(window.devicePixelRatio||1,2),w=cv.clientWidth,h=cv.clientHeight;if(!w||!h)return;
+    cv.width=w*dpr;cv.height=h*dpr;var g=cv.getContext('2d');g.scale(dpr,dpr);var r=rng(opts.seed);
+    var sky=g.createLinearGradient(0,0,0,h);
+    sky.addColorStop(0,'#1B2735');sky.addColorStop(.45,'#3E4F63');sky.addColorStop(.72,'#B4957A');sky.addColorStop(.86,'#E2C9A6');sky.addColorStop(1,'#E9D6B8');
+    g.fillStyle=sky;g.fillRect(0,0,w,h);
+    var sun=g.createRadialGradient(w*.68,h*.8,0,w*.68,h*.8,w*.45);
+    sun.addColorStop(0,'rgba(255,226,180,.55)');sun.addColorStop(1,'rgba(255,226,180,0)');g.fillStyle=sun;g.fillRect(0,0,w,h);
+    var base=h*opts.horizon;
+    // distant hills
+    g.fillStyle='rgba(88,90,104,.55)';g.beginPath();g.moveTo(0,base);
+    for(var x=0;x<=w;x+=w/40){g.lineTo(x,base-h*.06-Math.sin(x/w*5+1)*h*.025-r()*h*.01)}g.lineTo(w,h);g.lineTo(0,h);g.fill();
+    function layer(col,minH,maxH,minW,maxW,lights,pyramidAt){
+      var x=-20;
+      while(x<w+20){
+        var bw=minW+r()*(maxW-minW),bh=minH+r()*(maxH-minH);
+        if(pyramidAt!=null && Math.abs(x-w*pyramidAt)<bw){ // tapered spire tower
+          var pw=w*.05,ph=h*.52;g.fillStyle=col;g.beginPath();g.moveTo(x,base+2);g.lineTo(x+pw/2,base-ph);g.lineTo(x+pw,base+2);g.fill();
+          g.strokeStyle=col;g.lineWidth=1;g.beginPath();g.moveTo(x+pw/2,base-ph);g.lineTo(x+pw/2,base-ph-h*.05);g.stroke();
+          x+=pw+2;pyramidAt=null;continue;
+        }
+        g.fillStyle=col;g.fillRect(x,base-bh,bw,bh+2);
+        if(r()<.3){g.fillRect(x+bw*.3,base-bh-h*.02,bw*.4,h*.02)}
+        if(lights){
+          for(var yy=base-bh+8;yy<base-4;yy+=7){for(var xx=x+4;xx<x+bw-4;xx+=6){if(r()<.18){g.fillStyle='rgba(255,214,150,'+(.35+r()*.5)+')';g.fillRect(xx,yy,2,2.5)}}}
+          g.fillStyle=col;
+        }
+        x+=bw+(r()*4);
+      }
+    }
+    layer('rgba(70,78,92,.75)',h*.12,h*.32,w*.03,w*.07,false,null);
+    layer('#232C36',h*.08,h*.36,w*.035,w*.08,true,opts.pyramid);
+    // fog
+    for(var i=0;i<5;i++){var fy=base-h*(.02+r()*.1),fg=g.createLinearGradient(0,fy-40,0,fy+40);
+      fg.addColorStop(0,'rgba(233,222,205,0)');fg.addColorStop(.5,'rgba(233,222,205,'+(.14+r()*.12)+')');fg.addColorStop(1,'rgba(233,222,205,0)');
+      g.fillStyle=fg;g.fillRect(0,fy-40,w,80)}
+    // bay
+    var bay=g.createLinearGradient(0,base,0,h);bay.addColorStop(0,'#2A3542');bay.addColorStop(1,'#161D25');g.fillStyle=bay;g.fillRect(0,base,w,h-base);
+    for(var k=0;k<160;k++){var yy2=base+r()*(h-base),xx2=r()*w;g.fillStyle='rgba(255,215,160,'+(r()*.25)+')';g.fillRect(xx2,yy2,4+r()*18,1)}
+    // grain
+    var n=Math.floor(w*h/90);g.fillStyle='rgba(255,255,255,.035)';for(var j=0;j<n;j++){g.fillRect(r()*w,r()*h,1,1)}
+  }
+  function all(){paint(document.getElementById('sky'),{seed:7,horizon:.78,pyramid:.36});paint(document.getElementById('band'),{seed:21,horizon:.82,pyramid:.7})}
+  all();var t;addEventListener('resize',function(){clearTimeout(t);t=setTimeout(all,150)});
+  if(document.fonts&&document.fonts.ready)document.fonts.ready.then(all);
+})();
+</script>
+
+</body>
+</html>
