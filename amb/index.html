@@ -43,13 +43,13 @@ button,input,select{font:inherit;color:inherit}
 section{padding-block:clamp(64px,9vw,120px)}
 
 /* Utility bar */
-.utility{background:var(--ink);color:var(--on-ink-muted);font-size:12px;letter-spacing:.12em;text-transform:uppercase}
-.utility .wrap{display:flex;justify-content:space-between;align-items:center;gap:16px;min-height:38px;flex-wrap:wrap;padding-block:6px}
-.utility strong{color:var(--on-ink);font-weight:400;letter-spacing:.14em}
+.utility{background:var(--ink);color:var(--on-ink-muted);font-size:13px;letter-spacing:.12em;text-transform:uppercase}
+.utility .wrap{display:flex;justify-content:space-between;align-items:center;gap:16px;min-height:48px;flex-wrap:wrap;padding-block:8px}
+.utility strong{color:var(--on-ink);font-weight:500;letter-spacing:.08em;font-size:19px;margin-left:6px;font-variant-numeric:tabular-nums;user-select:all}
 
 /* Header */
 header.site{position:sticky;top:env(safe-area-inset-top,0px);z-index:40;background:var(--paper);border-bottom:1px solid var(--line)}
-header.site > .wrap{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;min-height:84px;gap:16px}
+header.site > .wrap:not(.mobile-nav){display:grid;grid-template-columns:1fr auto 1fr;align-items:center;min-height:84px;gap:16px}
 .nav{display:flex;gap:clamp(16px,2vw,30px);font-size:12px;letter-spacing:.18em;text-transform:uppercase;font-weight:400}
 .nav a{white-space:nowrap;padding-block:6px;border-bottom:1px solid transparent}
 .nav a:hover{border-color:var(--gold)}
@@ -63,7 +63,7 @@ header.site > .wrap{display:grid;grid-template-columns:1fr auto 1fr;align-items:
 .menu-btn span{display:block;width:22px;height:1px;background:var(--ink);margin:6px 0}
 .mobile-nav{border-top:1px solid var(--line);padding-block:12px 20px}
 .mobile-nav a{display:block;padding-block:12px;font-size:13px;letter-spacing:.18em;text-transform:uppercase;border-bottom:1px solid var(--line)}
-@media (max-width:1240px){.head-cta .phone{display:none}}
+.head-cta .phone{display:none}
 @media (max-width:980px){
   header.site > .wrap{grid-template-columns:auto 1fr auto;min-height:68px}
   .nav,.head-cta .phone{display:none}
@@ -246,14 +246,13 @@ footer{background:var(--ink);color:var(--on-ink-muted);font-size:14px;padding-bl
 <body>
 
 
+<header class="site">
 <div class="utility">
   <div class="wrap">
     <span>Free, confidential consultation &nbsp;·&nbsp; No fee unless we win</span>
     <span>Call <strong>(925) 414-0084</strong></span>
   </div>
 </div>
-
-<header class="site">
   <div class="wrap">
     <button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false"><span></span><span></span></button>
     <nav class="nav" aria-label="Primary">
@@ -401,7 +400,7 @@ footer{background:var(--ink);color:var(--on-ink-muted);font-size:14px;padding-bl
       <div class="res-grid">
         <div class="res"><b>$3,500,000</b><span>Auto accident</span></div>
         <div class="res"><b>$2,000,000</b><span>Slip &amp; fall</span></div>
-        <div class="res"><b>$1,250,000</b><span>Car accident · Policy limit</span></div>
+        <div class="res"><b>$1,250,000</b><span>Motorcycle accident · Policy limit</span></div>
         <div class="res"><b>$950,000</b><span>Auto accident</span></div>
         <div class="res"><b>$625,000</b><span>Auto accident</span></div>
         <div class="res"><b>$500,000</b><span>Assault &amp; battery · Policy limit</span></div>
